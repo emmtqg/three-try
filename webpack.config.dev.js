@@ -1,15 +1,19 @@
 const webpack = require('webpack');
+const path = require('path');    
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');    // removed Invalid configuration object
-                                // Options Validation Error
+const CleanWebpackPlugin = require('clean-webpack.plugin');
+
 
 module.exports = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   mode: 'development',
+  watch: true,
   module: {
     rules: [
     {
